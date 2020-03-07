@@ -8,11 +8,16 @@
 
 import UIKit
 
-let colorChangeNotificationKey = "changeFirstVcColor"
+let colorChangeNotificationKeyOne = "changeFirstVcColorToWhite"
+let colorChangeNotificationKeyTwo = "changeFirstVcColorToTeal"
 
 class FirstViewController: UIViewController {
 
-    let notiName = Notification.Name(rawValue: colorChangeNotificationKey)
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    
+    let notiOneName = Notification.Name(rawValue: colorChangeNotificationKeyOne)
+    let notiTwoName = Notification.Name(rawValue: colorChangeNotificationKeyTwo)
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -26,17 +31,32 @@ class FirstViewController: UIViewController {
         
     func observer() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.changeViewControllerColor(_:)), name: self.notiName, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.changeViewControllerColorToWhite(_:)), name: self.notiOneName, object: nil)
+
+            NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.changeViewControllerColorToTeal(_:)), name: self.notiTwoName, object: nil)
     }
     
-    @objc func changeViewControllerColor(_: NSNotification) {
+    
+    
+    @objc func changeViewControllerColorToWhite(_: Notification) {
         self.view.backgroundColor = UIColor.white
     }
     
+    @objc func changeViewControllerColorToTeal(_ : Notification) {
+        self.view.backgroundColor = UIColor.systemTeal
+    }
     
-    @IBAction func button(_ sender: UIButton) {
+    
+    
+    @IBAction func buttonOne(_ sender: UIButton) {
         
         let vc = storyboard?.instantiateViewController(identifier: "secondViewController") as! SecondViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func buttonTwo(_ sender: UIButton) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "thirdViewController") as! ThirdViewController
         navigationController?.pushViewController(vc, animated: true)
     }
 }

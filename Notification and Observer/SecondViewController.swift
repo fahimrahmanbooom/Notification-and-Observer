@@ -16,7 +16,7 @@ class SecondViewController: UIViewController {
 
         label.text = "First VC colour is white now"
         
-        let notiName = Notification.Name(rawValue: colorChangeNotificationKey)
-        NotificationCenter.default.post(name: notiName, object: nil)
+        let notiOneName = Notification.Name(rawValue: colorChangeNotificationKeyOne)
+        NotificationCenter.default.post(name: notiOneName, object: nil)
     }
 }

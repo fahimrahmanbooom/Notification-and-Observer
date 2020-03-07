@@ -38,16 +38,33 @@
                                     <constraint firstAttribute="height" constant="70" id="5Vb-No-XMx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
-                                <state key="normal" title="Press">
+                                <state key="normal" title="Go to Second VC">
                                     <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="button:" destination="PEr-8E-g1b" eventType="touchUpInside" id="3nt-X3-TGf"/>
+                                    <action selector="buttonOne:" destination="PEr-8E-g1b" eventType="touchUpInside" id="CqA-rk-4P3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-s6-RWc">
+                                <rect key="frame" x="41.5" y="491" width="331" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Uo9-ku-RQx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <state key="normal" title="Go to Third VC">
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTwo:" destination="PEr-8E-g1b" eventType="touchUpInside" id="hvc-AT-Cd8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="y4l-s6-RWc" firstAttribute="width" secondItem="Tey-Le-poX" secondAttribute="width" id="2hz-ER-mjU"/>
+                            <constraint firstItem="y4l-s6-RWc" firstAttribute="centerX" secondItem="1hm-Gd-OLF" secondAttribute="centerX" id="8pk-ha-Whx"/>
+                            <constraint firstItem="y4l-s6-RWc" firstAttribute="top" secondItem="Tey-Le-poX" secondAttribute="bottom" constant="8" id="aaj-JH-JfE"/>
                             <constraint firstItem="Tey-Le-poX" firstAttribute="centerY" secondItem="1hm-Gd-OLF" secondAttribute="centerY" id="eax-ZA-aIy"/>
                             <constraint firstItem="Tey-Le-poX" firstAttribute="centerX" secondItem="1hm-Gd-OLF" secondAttribute="centerX" id="lsi-hb-phk"/>
                             <constraint firstItem="Tey-Le-poX" firstAttribute="width" secondItem="1hm-Gd-OLF" secondAttribute="width" multiplier="0.8" id="pwt-34-vfD"/>
@@ -55,10 +72,14 @@
                         <viewLayoutGuide key="safeArea" id="JZj-0p-CuL"/>
                     </view>
                     <navigationItem key="navigationItem" id="ibc-Jg-ThY"/>
+                    <connections>
+                        <outlet property="buttonOne" destination="Tey-Le-poX" id="yue-zo-6yi"/>
+                        <outlet property="buttonTwo" destination="y4l-s6-RWc" id="a9s-dJ-QHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USV-na-LcC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832" y="131"/>
+            <point key="canvasLocation" x="843" y="131"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="DMC-En-IyI">
@@ -94,6 +115,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeC-iE-l7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1758" y="131"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="VRH-YF-vUr">
+            <objects>
+                <viewController storyboardIdentifier="thirdViewController" id="hCl-WE-Ppj" customClass="ThirdViewController" customModule="Notification_and_Observer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XIZ-Tt-NKF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="rPa-iN-IVt">
+                                <rect key="frame" x="41.5" y="413" width="331" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Zot-zh-Q00"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rPa-iN-IVt" firstAttribute="centerY" secondItem="XIZ-Tt-NKF" secondAttribute="centerY" id="GYc-vR-AJ1"/>
+                            <constraint firstItem="rPa-iN-IVt" firstAttribute="width" secondItem="XIZ-Tt-NKF" secondAttribute="width" multiplier="0.8" id="Q4Q-Cn-cJL"/>
+                            <constraint firstItem="rPa-iN-IVt" firstAttribute="centerX" secondItem="XIZ-Tt-NKF" secondAttribute="centerX" id="brt-Pc-ljB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="meG-ge-1Hb"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="rPa-iN-IVt" id="SPE-9s-7hA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ukt-hj-gH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2565" y="131"/>
         </scene>
     </scenes>
 </document>
